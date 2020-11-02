@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 import datetime as dt
 
 # Create your tests here.
-class neighbourhoodTestClass(TestCase):
+class NeighbourhoodTestClass(TestCase):
     def setUp(self):
         self.Kahawa = neighbourhood(neighbourhood='Kahawa')
 
@@ -24,7 +24,7 @@ class neighbourhoodTestClass(TestCase):
         hood = neighbourhood.objects.all()
         self.assertTrue(len(hood)==0)
 
-class healthservicesTestClass(TestCase):
+class HealthservicesTestClass(TestCase):
     def setUp(self):
         self.Radiotherapy = healthservices(healthservices='Radiotherapy')
 
