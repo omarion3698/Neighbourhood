@@ -26,20 +26,20 @@ class NeighbourhoodTestClass(TestCase):
 
 class HealthservicesTestClass(TestCase):
     def setUp(self):
-        self.Radiotherapy = healthservices(healthservices='Radiotherapy')
+        self.Sugery = healthservices(healthservices='Surgery')
 
     def test_instance(self):
-        self.assertTrue(isinstance(self.Radiotherapy,healthservices))
+        self.assertTrue(isinstance(self.Surgery,healthservices))
 
     def tearDown(self):
         healthservices.objects.all().delete()
 
     def test_save_method(self):
-        self.Radiotherapy.save_healthservices()
+        self.Surgery.save_healthservices()
         health = healthservices.objects.all()
         self.assertTrue(len(health)>0)
 
     def test_delete_method(self):
-        self.Radiotherapy.delete_healthservices('Radiotherapy')
+        self.Surgery.delete_healthservices('Surgery')
         health = healthservices.objects.all()
         self.assertTrue(len(health)==0)
