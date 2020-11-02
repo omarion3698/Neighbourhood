@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load staticfiles %}
+
+{% block content %}
+<div style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6ZsChkcvqHteWew4PLc9fL7NLyQ6qns21S0BEFdoDxWdE8412&s);background-size:cover ;height: 650px;">
+<div class="container" style="text-align: center;">
+  <div class="row">
+    <div class="col-md-12 top-div" style="margin-top:40px;">
+    <h1 style="font-family:fantasy;font-size: 75px;font-style: italic;">Neighbourhood</h1>
+    <hr>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <a href="{% url 'notifications'%}">
+          <p class="logos black-text" style="text-align: center; padding: 20px;border: 2px solid #00ACC1;border-radius:200px;font-weight:bolder; font-size: 30px;">Notifications</p>
+      </a>
+    </div>
+    <div class=" col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <a href="{% url 'blog'%}">
+          <p class="logos black-text" style="text-align: center; padding: 20px;border: 2px solid #00ACC1;border-radius:200px;font-weight:bolder; font-size: 30px;">Posts</p>
+      </a>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+      <a href="{% url 'health'%}">
+          <p class="logos black-text" style="text-align: center; padding: 20px;border: 2px solid #00ACC1;border-radius:200px;font-weight:bolder; font-size: 30px;">Health Services</p>
+
+      </a>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+      <a href="{% url 'authorities'%}">
+          <p class="logos black-text" style="text-align: center; padding: 20px;border: 2px solid #00ACC1;border-radius:200px;font-weight:bolder; font-size: 30px;">Authorities</p>
+
+    </a>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+      <a href="{% url 'businesses'%}">
+          <p class="logos black-text" style="text-align: center; padding: 20px;border: 2px solid #00ACC1;border-radius:200px;font-weight:bolder; font-size: 30px;">Businesses</p>
+
+    </a>
+    </div>
+  </div>
+</div>
+
+</div>
+{% endblock %}

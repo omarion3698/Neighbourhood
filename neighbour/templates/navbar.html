@@ -1,0 +1,75 @@
+{% load static %}
+<style>
+    .dropbtn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 16px;
+      font-size: 16px;
+      border: none;
+    }
+    
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    
+    .dropdown-content a:hover {background-color: #ddd;}
+    
+    .dropdown:hover .dropdown-content {display: block;}
+    
+    .dropdown:hover .dropbtn {background-color: #3e8e41;}
+    </style>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div>
+        <a href="/" id="brand"><img style="height: 50px;width: 50px;" class="rounded-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRARIJs2b8r3KKXGCZZSdSa7AOR-Y_CMNlgd3zuLb7G4qd-Qb5K&s" alt=""></a>
+  
+      </div>
+  <div class="dropdown dropdown-right" style="margin-left: 1000px;">
+    <span class="navbar-toggler-icon">
+        <div class="dropdown-content">
+
+      {% if user.is_superuser %}
+
+        <a class="nav-link" href="/admin">Admin</a>
+
+      {% endif %}
+
+      {% if user.is_authenticated %}
+
+        <a class="nav-link" href="{% url 'my-profile'%}">Profile</a>
+
+        <a class="nav-link" href="{% url 'update-profile' %}">Edit Profile</a>
+
+        <a class="nav-link" href="/logout">Logout</a>
+
+      {% else %}
+
+        <a class="nav-link" href="/accounts/login">Sign In</a>
+
+      {% endif %}
+    </div>
+    </span>
+  </div>  
+    <div class="nav-search" style="margin-left: 200px;">
+    <form class="form-inline md-form form-md active-pink active-pink-2 mt-2"  action="{% url 'search_results'%}">
+        <i class="fas fa-search" aria-hidden="true"></i>
+      <input class="form-control ml-3 w-75" type="text" placeholder="search" aria-label="search" name="titles">
+    </form>
+    </div>    
+</nav>
