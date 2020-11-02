@@ -6,21 +6,21 @@ import datetime as dt
 # Create your tests here.
 class NeighbourhoodTestClass(TestCase):
     def setUp(self):
-        self.Kahawa = neighbourhood(neighbourhood='Kahawa')
+        self.Kibra = neighbourhood(neighbourhood='Kibra')
 
     def test_instance(self):
-        self.assertTrue(isinstance(self.Kahawa,neighbourhood))
+        self.assertTrue(isinstance(self.Kibra,neighbourhood))
 
     def tearDown(self):
         neighbourhood.objects.all().delete()
 
     def test_save_method(self):
-        self.Kahawa.save_neighbourhood()
+        self.Kibra.save_neighbourhood()
         hood = neighbourhood.objects.all()
         self.assertTrue(len(hood)>0)
 
     def test_delete_method(self):
-        self.Kahawa.delete_neighbourhood('Kahawa')
+        self.Kibra.delete_neighbourhood('Kibra')
         hood = neighbourhood.objects.all()
         self.assertTrue(len(hood)==0)
 
