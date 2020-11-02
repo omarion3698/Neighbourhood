@@ -5,6 +5,7 @@
 {% block content %}
 <div class="container">
   <div class="row">
+
     <!-- Empty div -->
     <div class="col-md-4"></div>
 
@@ -12,20 +13,16 @@
       {% if form.errors %}
         <p>Some information might be incorrect</p>
       {% endif %}
-      <div class="text-center">
+    <div class="text-center">
       <div class="panel panel-default" style="margin-top:200px;">
-
         <div class="panel-body">
           <form action="/accounts/register/"method="post" >
-
             {% csrf_token%}
             {% bootstrap_form form %}
             <div class="form-group text-center">
               <input type="submit" class="btn btn-primary sign-up-button" value="Sign Up">
             </div>
             <input type="hidden" name="next" value="{{next}}">
-
-
           </form>
         </div>
       </div>
@@ -37,7 +34,6 @@
         </div>
       </div>
     </div>
-
 
     <div class="col-md-4"></div>
 </div>
