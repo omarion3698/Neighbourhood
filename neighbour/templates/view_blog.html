@@ -18,18 +18,14 @@
       <h6 class="card-subtitle mb-2 text-muted">{{blog.username}}</h6>
     </a>
     <img class="card-img-top" src="{{blog.image.url}}" >
-
     <div class="card-body">
-
     <p class="card-text">{{blog.post | safe}}</p>
   </div>
   <div class="card-footer">
     {% if comments%}
     <h4 class="text-center">Comments</h4>
       {% for comment in comments %}
-      <p>
-        <strong>{{comment.username.username}}</strong> {{comment.comment}}
-      </p>
+      <p><strong>{{comment.username.username}}</strong> {{comment.comment}}</p>
       {% endfor %}
 
     {%else %}
