@@ -6,10 +6,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <link rel="stylesheet" href="../static/css/profile.css">
   <link rel="stylesheet" href="../static/css/base.css">
-
 </head>
 
 
@@ -22,14 +20,11 @@
     {% endif %}
   </div>
 
-
   {% if blogs %}
   <div class="text-center">
     <div class="panel" style="width: 40rem;">
-      <!-- <div class="custom-card-header"> -->
       <div class="panel-body">
         {% for blog in blogs%}
-        <!-- <div class="custom-card-header"> -->
 
         <div class="card" style="width: 20rem;">
         <div class="card-body">
@@ -43,7 +38,6 @@
           <a href="/view/blog/{{blog.id}}" class="card-link">Continue reading</a>
         </div>
       </div>
-        <!-- </div> -->
 
         {% endfor %}
 
